@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'; 
+import randomColor from 'helpers/randomColor';
 import { StatisticsList, Title, StatItems, Label, Item, Percentage } from './Statistics.styled';
 
 export default function Statistics({title, stats}) {
@@ -7,7 +8,7 @@ export default function Statistics({title, stats}) {
 
   <StatItems>
     {stats.map((stat) => {
-        return (<Item key={stat.id}>                    
+        return (<Item key={stat.id} backgroundColor={randomColor()}>                    
                     <Label>{stat.label}</Label>
                     <Percentage>{stat.percentage}%</Percentage>
                 </Item>);
